@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign In - TruthLens</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<!-- Tailwind Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#00668a",
+                        "on-surface": "#dee3e8",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0a0f12",
+                        "on-primary-fixed": "#001e2c",
+                        "surface-container-highest": "#303539",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "outline": "#87929a",
+                        "primary-fixed-dim": "#7bd0ff",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-tint": "#7bd0ff",
+                        "background": "#0f1418",
+                        "inverse-surface": "#dee3e8",
+                        "surface-bright": "#343a3e",
+                        "secondary-fixed-dim": "#4edea3",
+                        "secondary": "#4edea3",
+                        "surface-container-low": "#171c20",
+                        "on-secondary": "#003824",
+                        "surface": "#0f1418",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary": "#ffc174",
+                        "on-surface-variant": "#bdc8d1",
+                        "on-primary": "#00354a",
+                        "on-primary-fixed-variant": "#004c69",
+                        "primary-container": "#38bdf8",
+                        "on-primary-container": "#004965",
+                        "secondary-fixed": "#6ffbbe",
+                        "primary": "#8ed5ff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "secondary-container": "#00a572",
+                        "on-tertiary-fixed": "#2a1700",
+                        "outline-variant": "#3e484f",
+                        "surface-variant": "#303539",
+                        "on-secondary-container": "#00311f",
+                        "on-tertiary": "#472a00",
+                        "tertiary-container": "#f59e0b",
+                        "surface-container-high": "#252b2e",
+                        "primary-fixed": "#c4e7ff",
+                        "error-container": "#93000a",
+                        "surface-container": "#1b2024",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#2c3135",
+                        "surface-dim": "#0f1418",
+                        "on-background": "#dee3e8",
+                        "on-tertiary-container": "#613b00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "xl": "80px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["JetBrains Mono"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-primary/30 selection:text-primary">
+<!-- TopNavBar (Shared Component) -->
+<nav class="bg-background/80 dark:bg-background/80 backdrop-blur-xl docked full-width top-0 border-b border-white/10 flat no shadows fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-sm max-w-container-max mx-auto">
+<div class="flex items-center gap-md">
+<span class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary">TruthLens</span>
+</div>
+<!-- Navigation Links (None active as this is login) -->
+<div class="hidden md:flex items-center gap-md font-label-md text-label-md">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">About</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">How it Works</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Resources</a>
+</div>
+<div>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-200 hover:scale-95 transform block" href="#">Sign In</a>
+</div>
+</nav>
+<!-- Main Content: Login Split Card -->
+<main class="flex-grow flex items-center justify-center px-gutter pt-xl pb-lg mt-16">
+<div class="w-full max-w-5xl flex flex-col md:flex-row bg-surface-container-low border border-white/10 rounded-xl overflow-hidden shadow-2xl relative z-10">
+<!-- Left Panel: Visuals & Branding (Hidden on mobile) -->
+<div class="hidden md:flex md:w-1/2 relative bg-surface-container-highest overflow-hidden p-12 flex-col justify-between">
+<!-- Abstract Geometric Background -->
+<div class="absolute inset-0 z-0 opacity-60 mix-blend-luminosity">
+<div class="w-full h-full bg-cover bg-center" data-alt="A sophisticated, abstract geometric 3D render representing fast-moving data and verification networks. Utilizing deep charcoal, obsidian, and subtle glowing neon blue (primary color) accents. The aesthetic is high-end, corporate, minimalist, and glassmorphic. Studio lighting, soft shadows, sharp geometric edges." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBA6jwXm9QHeiQWT7EkFXxeU5sDCDdYjnbX6rPjcS_OQbDRI8NEWBqts1g3vJ9IgQn_nSAw-3B6v8S4HIJ-MkYxD2TEu-2UxryiUob4Liubguk6NFZcd27zPFWVF3uoRJMJqso3fcb7WSrh8wp79YUCyh_fE6eMhTd3EGGasw1v3kt15zWdhi6fQtaEp6jVh1IKbjMohXJECEV6T1OLQJFCDL_WxMpomIaI_TXjwixX-q6r9WP2HfGZ')"></div>
+<!-- Overlay gradient for text readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-surface-container-highest/50 to-transparent"></div>
+</div>
+<!-- Branding Anchor -->
+<div class="relative z-10">
+<span class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight block mb-2">TruthLens</span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded inline-block">Enterprise Auth</span>
+</div>
+<!-- Messaging Anchor -->
+<div class="relative z-10 mt-auto pt-xl">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-sm max-w-md">
+                        Information moves fast. Verification should move faster.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm">
+                        Access your advanced data science dashboard and verified insights platform.
+                    </p>
+</div>
+</div>
+<!-- Right Panel: Form -->
+<div class="w-full md:w-1/2 p-8 md:p-lg flex flex-col justify-center bg-surface-container-low relative">
+<div class="w-full max-w-md mx-auto">
+<!-- Mobile Logo (Visible only on mobile) -->
+<div class="md:hidden mb-lg">
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary block text-center">TruthLens</span>
+</div>
+<div class="mb-lg text-center md:text-left">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">Welcome back</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sign in to your account to continue</p>
+</div>
+<form action="#" class="space-y-md" method="POST">
+<!-- Email Input -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-sm" for="email">Email address</label>
+<input class="w-full bg-surface-container-highest border border-outline-variant/50 rounded-lg px-4 py-3 font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-on-surface-variant/50" id="email" name="email" placeholder="name@company.com" required="" type="email"/>
+</div>
+<!-- Password Input -->
+<div>
+<div class="flex items-center justify-between mb-sm">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="password">Password</label>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-fixed transition-colors" href="#">Forgot password?</a>
+</div>
+<input class="w-full bg-surface-container-highest border border-outline-variant/50 rounded-lg px-4 py-3 font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-on-surface-variant/50" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+<!-- Sign In Action -->
+<div class="pt-sm">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-md text-label-md font-bold hover:bg-primary-fixed transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-background flex justify-center items-center gap-2" type="submit">
+                                Sign In
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Divider -->
+<div class="relative my-lg">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant/30"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-2 bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant">Or continue with</span>
+</div>
+</div>
+<!-- Social Login -->
+<div>
+<button class="w-full bg-transparent border border-outline-variant/50 text-on-surface py-3 rounded-lg font-label-md text-label-md hover:bg-surface-container-highest transition-colors flex justify-center items-center gap-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">data_exploration</span> <!-- Placeholder icon for Google/Social -->
+                            Continue with Google
+                        </button>
+</div>
+<!-- Footer Link -->
+<div class="mt-xl text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                            Don't have an account? 
+                            <a class="font-label-md text-label-md text-primary hover:text-primary-fixed transition-colors" href="#">Create one</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
