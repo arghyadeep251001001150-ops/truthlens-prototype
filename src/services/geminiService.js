@@ -9,7 +9,7 @@ export const TEXT_MODELS = [
   'gemini-3.7-flash',
   'gemini-3.5-flash',
   'gemini-2.5-flash',
-  'gemini-2.5-pro'
+  'gemini-3.1-pro-preview'
 ];
 
 // Vision models — multimodal models supporting inlineData image payloads
@@ -20,7 +20,7 @@ export const VISION_MODELS = [
   'gemini-3.7-flash',
   'gemini-3.5-flash',
   'gemini-2.5-flash',
-  'gemini-2.5-pro'
+  'gemini-3.1-pro-preview'
 ];
 
 // Persistent In-Memory & Session Cache to ensure identical inputs return permanent, instant, high-confidence results
